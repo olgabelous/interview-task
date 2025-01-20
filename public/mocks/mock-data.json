@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "tarifName": "Tarif name 1",
+    "download": 12,
+    "upload": 6,
+    "benefits": [
+      "Tarif benefit 1",
+      "Tarif benefit 2",
+      "Tarif benefit 3",
+      "Tarif benefit 4"
+    ],
+    "price": 123.45
+  },
+  {
+    "id": 2,
+    "tarifName": "Tarif name 2",
+    "download": 12,
+    "upload": 7,
+    "benefits": [
+      "Tarif benefit 1",
+      "Tarif benefit 2",
+      "Tarif benefit 3",
+      "Tarif benefit 4"
+    ],
+    "price": 124.45
+  },
+  {
+    "id": 3,
+    "tarifName": "Tarif name 3",
+    "download": 12.50,
+    "upload": 6,
+    "benefits": [
+      "Tarif benefit 1",
+      "Tarif benefit 2",
+      "Tarif benefit 3",
+      "Tarif benefit 4"
+    ],
+    "price": 125.50
+  },
+  {
+    "id": 4,
+    "tarifName": "Tarif name 4",
+    "download": 11,
+    "upload": 7,
+    "benefits": [
+      "Tarif benefit 1",
+      "Tarif benefit 2",
+      "Tarif benefit 3",
+      "Tarif benefit 4"
+    ],
+    "price": 122.45
+  },
+  {
+    "id": 5,
+    "tarifName": "Tarif name 5",
+    "download": 15,
+    "upload": 6.3,
+    "benefits": [
+      "Tarif benefit 1",
+      "Tarif benefit 2",
+      "Tarif benefit 3",
+      "Tarif benefit 4"
+    ],
+    "price": 123.85
+  }
+]
