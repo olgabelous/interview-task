@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TarifListComponent } from "./tarif-list/tarif-list/tarif-list.component";
+import { TarifListComponent } from "./tarif-list/tarif-list.component";
 
 @Component({
   selector: 'app-root',

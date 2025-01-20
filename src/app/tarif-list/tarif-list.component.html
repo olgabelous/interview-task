@@ -1,0 +1,8 @@
+<div class="tariff-list">
+  @for (tarif of (tarifList$ | async); track tarif.id) {
+    <mat-card class="tariff-card">
+      <div>{{ $index + 1 }}.</div>
+      <app-tarif [tarif]="tarif"/>
+    </mat-card>
+  }
+</div>
