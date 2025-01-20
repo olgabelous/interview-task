@@ -1,23 +1,13 @@
-<div class="tariff-content">
+<div class="tariff-content mobile">
   <div class="tariff-header">
-    <h3>{{ tarif().tarifName }}</h3>
+    <div>{{ tarif().tarifName }}</div>
   </div>
 
   <div class="speed">
-    <p>Download</p>
     <span>⬇ {{ tarif().download }} Mbit/s</span>
-    <p>Upload</p>
-    <span>⬆ {{ tarif().upload }} Mbit/s</span>
   </div>
 
-  <ul class="benefits">
-    @for (benefit of tarif().benefits; track benefit) {
-    <li>{{ benefit }}</li>
-    }
-  </ul>
-
-  <div class="price-action">
-    <p class="price">{{ tarif().price | currency:'EUR'}}</p>
-    <button mat-raised-button color="primary">To Tariff ></button>
-  </div>
+  <p class="price">{{ tarif().price | currency:'EUR'}}</p>
+  
+  <button class="tarif-btn" mat-raised-button color="primary">></button>
 </div>

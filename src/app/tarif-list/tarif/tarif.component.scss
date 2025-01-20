@@ -1,35 +1,17 @@
-.tariff-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.tariff-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+}
 
-  .tariff-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    width: 100%;
-  }
+.speed {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
 
-  .speed {
-    display: flex;
-    flex-direction: column;
-    margin-right: 1rem;
-  }
-  
-  .benefits {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .price-action {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  .price {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+}
