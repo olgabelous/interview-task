@@ -17,7 +17,7 @@
   </ul>
 
   <div class="price-action">
-    <p class="price">{{ tarif().price }}</p>
+    <p class="price">{{ tarif().price | currency:'EUR'}}</p>
     <button mat-raised-button color="primary">To Tariff ></button>
   </div>
 </div>
