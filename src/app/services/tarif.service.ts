@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tarif } from '../models/tarif';
+import { Tariff } from '../models/tariff';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TarifService {
+export class TariffService {
 
   constructor(private http: HttpClient) {}
 
-  getTarifs(): Observable<Tarif[]> {
-    return this.http.get<Tarif[]>('/mocks/mock-data.json');
+  getTariffs(): Observable<Tariff[]> {
+    return this.http.get<Tariff[]>('/mocks/mock-data.json');
   }
 }

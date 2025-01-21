@@ -1,26 +1,26 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
-import { TarifService } from '../services/tarif.service';
-import { Tarif } from '../models/tarif';
+import { TariffService } from '../services/tarif.service';
+import { Tariff } from '../models/tariff';
 import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import { TarifComponent } from './tarif/tarif.component';
 import { SortingOption, SORTING_OPTIONS } from '../models/sorting-options'; 
+import { TariffComponent } from './tariff/tariff.component';
 
 @Component({
   selector: 'app-tarif-list',
-  imports: [MatCardModule, TarifComponent, MatSelectModule],
-  templateUrl: './tarif-list.component.html',
-  styleUrl: './tarif-list.component.scss',
+  imports: [MatCardModule, TariffComponent, MatSelectModule],
+  templateUrl: './tariff-list.component.html',
+  styleUrl: './tariff-list.component.scss',
 })
-export class TarifListComponent implements OnInit{
+export class TariffListComponent implements OnInit{
   sortOrder = signal<string>('download-asc');
   sortingOptions: SortingOption[] = SORTING_OPTIONS;
 
-  tarifs = signal<Tarif[]>([]);
+  tariffs = signal<Tariff[]>([]);
 
-  sortedTarifs = computed(() => {
+  sortedTariffs = computed(() => {
     const order = this.sortOrder();
-    const tarifs = [...this.tarifs()];
+    const tarifs = [...this.tariffs()];
     switch (order) {
       case 'download-asc':
         return tarifs.sort((a, b) => a.download - b.download);
@@ -40,9 +40,9 @@ export class TarifListComponent implements OnInit{
   });
 
 
-  constructor(private tarifService: TarifService) {}
+  constructor(private tariffService: TariffService) {}
 
   ngOnInit(): void {
-    this.tarifService.getTarifs().subscribe((tarifs) => this.tarifs.set(tarifs));
+    this.tariffService.getTariffs().subscribe((tariffs) => this.tariffs.set(tariffs));
   }
 }

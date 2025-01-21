@@ -1,4 +1,4 @@
-export interface Tarif {
+export interface Tariff {
     id: number,
     tarifName: string,
     download: number,

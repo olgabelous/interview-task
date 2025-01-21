@@ -11,7 +11,7 @@
 </mat-form-field>
 
 <div class="tariff-list">
-  @for (tarif of sortedTarifs(); track tarif.id) {
+  @for (tarif of sortedTariffs(); track tarif.id) {
   <mat-card class="tariff-card">
     <div class="index">{{ $index + 1 }}.</div>
     <app-tarif class="tarif" [tarif]="tarif" />
