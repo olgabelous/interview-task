@@ -9,34 +9,34 @@
     >
   </div>
 
-  <p class="price">{{ tarif().price | currency : "EUR" }}</p>
+  <div class="price">{{ tarif().price | currency : "EUR" }}</div>
 
   <button mat-icon-button class="tarif-btn" color="primary">
     <mat-icon>chevron_right</mat-icon>
   </button>
 </div>
 
-<!-- Desktop content -->
-<div class="tarif-content desktop-content">
+<!-- Desktop & Tablet content -->
+<div class="tarif-content desktop-tablet-content">
   <div class="tarif-header">
     {{ tarif().tarifName }}
   </div>
 
   <div class="speed">
-    <div>Download</div>
+    <div class="desktop-content">Download</div>
     <mat-chip>
       <mat-icon matChipAvatar>arrow_downward</mat-icon>
       {{ tarif().download }} Mbit/s
     </mat-chip>
 
-    <div>Upload</div>
+    <div class="desktop-content">Upload</div>
     <mat-chip>
       <mat-icon matChipAvatar>arrow_upward</mat-icon>
       {{ tarif().upload }} Mbit/s
     </mat-chip>
   </div>
 
-  <mat-list>
+  <mat-list class="desktop-content">
     @for (benefit of tarif().benefits; track benefit) {
     <mat-list-item class="benefit-item">
       <mat-icon matListItemIcon class="benefit-icon">check</mat-icon>

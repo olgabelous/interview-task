@@ -16,28 +16,46 @@
   font-weight: bold;
 }
 
-.desktop-content {
+.desktop-tablet-content {
   display: none;
 }
 
 /* Tablet styles */
 @media (min-width: 768px) {
-  .desktop-content {
+  .desktop-content,
+  .desktop-flex-content,
+  .mobile-content {
     display: none;
   }
 
-  .mobile-content {
-    display: none;
+  .desktop-tablet-content {
+    display: flex;
+  }
+
+  .tarif-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .price-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
-  .desktop-content {
+  .desktop-tablet-content {
     display: flex;
   }
 
-  .mobile-content {
+  .desktop-content {
+    display: block;
+  }
+
+  .mobile-content,
+  .tablet-content {
     display: none;
   }
 
