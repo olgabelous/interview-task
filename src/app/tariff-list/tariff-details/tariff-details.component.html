@@ -1,0 +1,13 @@
+<mat-card class="tariff-details" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Tariff Details</mat-card-title>
+    <mat-card-subtitle>
+      @if (tariffId()) {
+      <p>You selected tariff with ID: {{ tariffId() }}</p>
+      }
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <a routerLink="/tariffs">Back to Tariff List</a>
+  </mat-card-actions>
+</mat-card>

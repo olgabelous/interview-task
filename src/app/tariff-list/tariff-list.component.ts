@@ -1,5 +1,5 @@
 import { Component, computed, OnInit, signal } from '@angular/core';
-import { TariffService } from '../services/tarif.service';
+import { TariffService } from '../services/tariff.service';
 import { Tariff } from '../models/tariff';
 import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';

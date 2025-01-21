@@ -1,6 +1,6 @@
 export interface Tariff {
     id: number,
-    tarifName: string,
+    tariffName: string,
     download: number,
     upload: number,
     benefits: string[],

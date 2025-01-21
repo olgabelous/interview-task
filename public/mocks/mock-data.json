@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "tarifName": "Tarif name 1",
+    "tariffName": "Tarif name 1",
     "download": 12,
     "upload": 6,
     "benefits": [
@@ -14,7 +14,7 @@
   },
   {
     "id": 2,
-    "tarifName": "Tarif name 2",
+    "tariffName": "Tarif name 2",
     "download": 12,
     "upload": 7,
     "benefits": [
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "tarifName": "Tarif name 3",
+    "tariffName": "Tarif name 3",
     "download": 12.50,
     "upload": 6,
     "benefits": [
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "tarifName": "Tarif name 4",
+    "tariffName": "Tarif name 4",
     "download": 11,
     "upload": 7,
     "benefits": [
@@ -53,7 +53,7 @@
   },
   {
     "id": 5,
-    "tarifName": "Tarif name 5",
+    "tariffName": "Tarif name 5",
     "download": 15,
     "upload": 6.3,
     "benefits": [

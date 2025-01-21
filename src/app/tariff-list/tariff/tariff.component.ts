@@ -7,9 +7,10 @@ import {MatListModule} from '@angular/material/list';
 import { Tariff } from '../../models/tariff';
 import { CurrencyPipe } from '@angular/common';
 import { MbitUnitPipe } from '../../pipes/mbit-unit.pipe';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tarif',
+  selector: 'app-tariff',
   imports: [
     CurrencyPipe,
     MatButtonModule, 
@@ -22,5 +23,11 @@ import { MbitUnitPipe } from '../../pipes/mbit-unit.pipe';
   styleUrl: './tariff.component.scss'
 })
 export class TariffComponent {
-  tarif = input.required<Tariff>();
+  tariff = input.required<Tariff>();
+
+  constructor(private router: Router) {}
+
+  goToTariffDetails() {
+    this.router.navigate(['tariffs', this.tariff().id]);
+  }
 }
