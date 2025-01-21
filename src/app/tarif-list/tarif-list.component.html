@@ -1,8 +1,20 @@
+<mat-form-field class="sorting">
+  <mat-label>Sorted by:</mat-label>
+  <mat-select
+    [value]="sortOrder()"
+    (selectionChange)="sortOrder.set($event.value)"
+  >
+    @for (option of sortingOptions; track option.value) {
+    <mat-option [value]="option.value">{{ option.label }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
 <div class="tariff-list">
-  @for (tarif of (tarifList$ | async); track tarif.id) {
-    <mat-card class="tariff-card">
-      <div>{{ $index + 1 }}.</div>
-      <app-tarif [tarif]="tarif"/>
-    </mat-card>
+  @for (tarif of sortedTarifs(); track tarif.id) {
+  <mat-card class="tariff-card">
+    <div>{{ $index + 1 }}.</div>
+    <app-tarif [tarif]="tarif" />
+  </mat-card>
   }
 </div>

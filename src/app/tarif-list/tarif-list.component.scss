@@ -1,14 +1,23 @@
-.tariff-list {
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  .sorting {
+    width: 100%;
+  }
+
+  .tariff-list {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    margin: 3rem;
   }
   
   .tariff-card {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
-    border: 1px solid #ccc;
   }
-  
+}
+
+

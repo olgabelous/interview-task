@@ -4,10 +4,12 @@
   </div>
 
   <div class="speed">
-    <span>⬇ {{ tarif().download }} Mbit/s</span>
+    <span><mat-icon>arrow_downward</mat-icon> {{ tarif().download }} Mbit/s</span>
   </div>
 
   <p class="price">{{ tarif().price | currency:'EUR'}}</p>
   
-  <button class="tarif-btn" mat-raised-button color="primary">></button>
+  <button mat-icon-button class="tarif-btn" color="primary">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </div>
