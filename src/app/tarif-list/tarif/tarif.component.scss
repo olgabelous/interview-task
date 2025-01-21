@@ -1,4 +1,4 @@
-.tariff-content {
+.tarif-content {
   display: flex;
   justify-content: space-between;
   align-items: start;
@@ -8,10 +8,59 @@
 .speed {
   display: flex;
   flex-direction: column;
-  margin-right: 1rem;
+  gap: 0.5rem;
 }
 
 .price {
   font-size: 1rem;
   font-weight: bold;
+}
+
+.desktop-content {
+  display: none;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .desktop-content {
+    display: none;
+  }
+
+  .mobile-content {
+    display: none;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .desktop-content {
+    display: flex;
+  }
+
+  .mobile-content {
+    display: none;
+  }
+
+  .tarif-header {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .benefit-item {
+    height: 30px !important;
+
+    .benefit-icon {
+      color: green;
+    }
+  }
+
+  .price-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price {
+    font-size: 1.4rem;
+  }
 }

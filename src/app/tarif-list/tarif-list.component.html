@@ -13,8 +13,8 @@
 <div class="tariff-list">
   @for (tarif of sortedTarifs(); track tarif.id) {
   <mat-card class="tariff-card">
-    <div>{{ $index + 1 }}.</div>
-    <app-tarif [tarif]="tarif" />
+    <div class="index">{{ $index + 1 }}.</div>
+    <app-tarif class="tarif" [tarif]="tarif" />
   </mat-card>
   }
 </div>
