@@ -5,9 +5,14 @@
   </div>
 
   <div class="speed">
-    <span
-      ><mat-icon>arrow_downward</mat-icon> {{ tarif().download | mbitUnit }}</span
-    >
+    <div class="speed-item">
+      <mat-icon class="speed-icon">arrow_downward</mat-icon>
+      <span>{{ tarif().download | mbitUnit }}</span>
+    </div>
+    <div class="speed-item">
+      <mat-icon class="speed-icon">arrow_upward</mat-icon>
+      <span>{{ tarif().upload | mbitUnit }}</span>
+    </div>
   </div>
 
   <div class="price">{{ tarif().price | currency : "EUR" }}</div>
