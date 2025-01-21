@@ -1,3 +1,4 @@
+<!-- Mobile content -->
 <div class="tarif-content mobile-content">
   <div class="tarif-header">
     {{ tarif().tarifName }}
@@ -5,7 +6,7 @@
 
   <div class="speed">
     <span
-      ><mat-icon>arrow_downward</mat-icon> {{ tarif().download }} Mbit/s</span
+      ><mat-icon>arrow_downward</mat-icon> {{ tarif().download | mbitUnit }}</span
     >
   </div>
 
@@ -26,13 +27,13 @@
     <div class="desktop-content">Download</div>
     <mat-chip>
       <mat-icon matChipAvatar>arrow_downward</mat-icon>
-      {{ tarif().download }} Mbit/s
+      {{ tarif().download | mbitUnit }}
     </mat-chip>
 
     <div class="desktop-content">Upload</div>
     <mat-chip>
       <mat-icon matChipAvatar>arrow_upward</mat-icon>
-      {{ tarif().upload }} Mbit/s
+      {{ tarif().upload | mbitUnit }} 
     </mat-chip>
   </div>
 
