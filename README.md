@@ -1,59 +1,46 @@
-# InterviewTask
+# Interview Task: Responsive Tariff Result List
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.2.
+## Overview
 
-## Development server
+This project is a responsive tariff result list developed using Angular 19. It features an asynchronous service that simulates a backend API to fetch mock tariff data. The application is designed with a mobile-first approach, ensuring optimal user experience across various devices. Additionally, it includes filtering options to sort the tariff list based on attributes such as download/upload speed and price.
 
-To start a local development server, run:
+## Features
+
+- **Responsive Design**: The layout adapts seamlessly to different screen sizes, providing a fluid user experience on mobile, tablet, and desktop devices.
+- **Asynchronous Data Fetching**: An asynchronous service mimics an API call to retrieve mock tariff data, enhancing the application's responsiveness.
+- **Filtering Options**: Users can sort the tariff list by various attributes, including download speed, upload speed, and price, facilitating easy data navigation.
+- **Unit Testing**: Comprehensive tests are implemented for Angular components to ensure reliability and maintainability.
+- **CSS Preprocessing**: Styles are managed using SCSS, allowing for modular and maintainable CSS.
+
+## Prerequisites
+
+- **Node.js**: Ensure that Node.js is installed on your system. You can download it from the [official website](https://nodejs.org/en/download/).
+- **Angular CLI**: Install the Angular Command Line Interface globally using npm:
+
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+## Install Dependencies
+
+- Navigate to the Project Directory and Install Dependencies :
+
+```bash
+npm install
+```
+
+## Running the Application
+
+- To start the development server and run the application, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Running Tests
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- To execute the unit tests for the Angular components, run:
 
 ```bash
 ng test
 ```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
