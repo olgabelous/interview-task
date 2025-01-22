@@ -1,67 +1,74 @@
 [
   {
     "id": 1,
-    "tariffName": "Tarif name 1",
-    "download": 12,
-    "upload": 6,
+    "tariffName": "Basic Plan",
+    "download": 25,
+    "upload": 5,
     "benefits": [
-      "Tarif benefit 1",
-      "Tarif benefit 2",
-      "Tarif benefit 3",
-      "Tarif benefit 4"
+      "No data cap",
+      "24/7 customer support",
+      "Free installation",
+      "Access to Wi-Fi hotspots"
     ],
-    "price": 123.45
+    "price": 29.99
   },
   {
     "id": 2,
-    "tariffName": "Tarif name 2",
-    "download": 12,
-    "upload": 7,
+    "tariffName": "Standard Plan",
+    "download": 50,
+    "upload": 10,
     "benefits": [
-      "Tarif benefit 1",
-      "Tarif benefit 2",
-      "Tarif benefit 3",
-      "Tarif benefit 4"
+      "No data cap",
+      "24/7 customer support",
+      "Free installation",
+      "Access to Wi-Fi hotspots",
+      "Free modem rental"
     ],
-    "price": 124.45
+    "price": 49.99
   },
   {
     "id": 3,
-    "tariffName": "Tarif name 3",
-    "download": 12.50,
-    "upload": 6,
+    "tariffName": "Premium Plan",
+    "download": 100,
+    "upload": 20,
     "benefits": [
-      "Tarif benefit 1",
-      "Tarif benefit 2",
-      "Tarif benefit 3",
-      "Tarif benefit 4"
+      "No data cap",
+      "24/7 customer support",
+      "Free installation",
+      "Access to Wi-Fi hotspots",
+      "Free modem rental",
+      "Priority technical support"
     ],
-    "price": 125.50
+    "price": 69.99
   },
   {
     "id": 4,
-    "tariffName": "Tarif name 4",
-    "download": 11,
-    "upload": 7,
+    "tariffName": "Family Plan",
+    "download": 150,
+    "upload": 30,
     "benefits": [
-      "Tarif benefit 1",
-      "Tarif benefit 2",
-      "Tarif benefit 3",
-      "Tarif benefit 4"
+      "No data cap",
+      "24/7 customer support",
+      "Free installation",
+      "Access to Wi-Fi hotspots",
+      "Free modem rental",
+      "Parental controls"
     ],
-    "price": 122.45
+    "price": 89.99
   },
   {
     "id": 5,
-    "tariffName": "Tarif name 5",
-    "download": 15,
-    "upload": 6.3,
+    "tariffName": "Gamer's Plan",
+    "download": 200,
+    "upload": 50,
     "benefits": [
-      "Tarif benefit 1",
-      "Tarif benefit 2",
-      "Tarif benefit 3",
-      "Tarif benefit 4"
+      "No data cap",
+      "24/7 customer support",
+      "Free installation",
+      "Access to Wi-Fi hotspots",
+      "Free modem rental",
+      "Low latency optimized"
     ],
-    "price": 123.85
+    "price": 109.99
   }
 ]
