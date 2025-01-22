@@ -39,6 +39,8 @@ export class TariffComponent{
   }
 
   goToTariffDetails() {
-    this.router.navigate(['tariffs', this.tariff().id]);
+    this.router.navigate(['tariffs', this.tariff().id], {
+      state: { tariff: this.tariff() }
+    });
   }
 }

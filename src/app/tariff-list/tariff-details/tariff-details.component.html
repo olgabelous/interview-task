@@ -1,13 +1,21 @@
+@if (tariff) {
 <mat-card class="tariff-details" appearance="outlined">
   <mat-card-header>
-    <mat-card-title>Tariff Details</mat-card-title>
-    <mat-card-subtitle>
-      @if (tariffId()) {
-      <p>You selected tariff with ID: {{ tariffId() }}</p>
-      }
-    </mat-card-subtitle>
+    <mat-card-title class="tariff-title">{{ tariff.tariffName }}</mat-card-title>
+    <mat-card-subtitle>Price: {{ tariff.price | currency }}</mat-card-subtitle>
   </mat-card-header>
+  <mat-card-content>
+    <p>Download Speed: {{ tariff.download | mbitUnit }}</p>
+    <p>Upload Speed: {{ tariff.upload | mbitUnit }} Mbps</p>
+    <h3>Benefits:</h3>
+    <ul>
+      @for (benefit of tariff.benefits; track benefit ) {
+      <li>{{ benefit }}</li>
+      }
+    </ul>
+  </mat-card-content>
   <mat-card-actions>
     <a routerLink="/tariffs">Back to Tariff List</a>
   </mat-card-actions>
 </mat-card>
+}
