@@ -7,11 +7,11 @@
   <div class="speed">
     <div class="speed-item">
       <mat-icon class="speed-icon">arrow_downward</mat-icon>
-      <span>{{ tariff().download | mbitUnit }}</span>
+      <span class="download-speed">{{ tariff().download | mbitUnit }}</span>
     </div>
     <div class="speed-item">
       <mat-icon class="speed-icon">arrow_upward</mat-icon>
-      <span>{{ tariff().upload | mbitUnit }}</span>
+      <span class="upload-speed">{{ tariff().upload | mbitUnit }}</span>
     </div>
   </div>
 
@@ -30,13 +30,13 @@
 
   <div class="speed">
     <div class="desktop-content">Download</div>
-    <mat-chip>
+    <mat-chip class="speed-chip">
       <mat-icon matChipAvatar>arrow_downward</mat-icon>
       {{ tariff().download | mbitUnit }}
     </mat-chip>
 
     <div class="desktop-content">Upload</div>
-    <mat-chip>
+    <mat-chip class="speed-chip">
       <mat-icon matChipAvatar>arrow_upward</mat-icon>
       {{ tariff().upload | mbitUnit }} 
     </mat-chip>
