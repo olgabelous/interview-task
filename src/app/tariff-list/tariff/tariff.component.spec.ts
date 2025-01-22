@@ -15,16 +15,18 @@ import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatChipHarness } from '@angular/material/chips/testing';
 import { DebugElement } from '@angular/core';
+import { ResponsiveService } from '../../services/responsive.service';
 
 describe('TariffComponent', () => {
   let component: TariffComponent;
   let fixture: ComponentFixture<TariffComponent>;
   let router: Router;
+  let responsiveService: ResponsiveService;
   let loader: HarnessLoader;
   const mockTariff: Tariff = MOCK_TARIFFS[0];
 
   // Reusable setup function
-  async function setupComponent() {
+  async function setupComponent(isMobile: boolean, isTablet: boolean, isDesktop: boolean) {
     await TestBed.configureTestingModule({
       imports: [
         MatButtonModule,
@@ -42,12 +44,17 @@ describe('TariffComponent', () => {
             navigate: jasmine.createSpy('navigate'),
           },
         },
+        { 
+          provide: ResponsiveService, 
+          useValue: new MockResponsiveService(isMobile, isTablet, isDesktop) 
+        },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TariffComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
+    responsiveService = TestBed.inject(ResponsiveService);
 
     // Set the required input
     fixture.componentRef.setInput('tariff', mockTariff);
@@ -61,8 +68,9 @@ describe('TariffComponent', () => {
     let mobileContent: DebugElement;
 
     beforeEach(async () => {
-      await setupComponent();
+      await setupComponent(true, false, false);
 
+      fixture.detectChanges();
       mobileContent = fixture.debugElement.query(By.css('.mobile-content'));
     });
 
@@ -103,23 +111,93 @@ describe('TariffComponent', () => {
       expect(button).toBeTruthy();
     });
 
-    // it('should not display benefits in mobile view', async () => {
-    //   const benefits = fixture.debugElement.queryAll(By.css('.benefit-item'));
-    //   const isVisible = () => {
-    //     const style = getComputedStyle(benefitsElement);
-    //     return style && style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
-    //   };
-      
-    //   expect(isVisible()).toBe(true);
-    // });
+    it('should not display benefits in mobile view', async () => {
+    const benefitsList = fixture.debugElement.query(By.css('.benefit-item'));
+    expect(benefitsList).toBeNull();
+    });
+  });
+
+  describe('Tablet view', () => {
+    beforeEach(async () => {
+      //isTablet = true
+      await setupComponent(false, true, false);
+
+      fixture.detectChanges();
+    });
+
+    it('should display tablet content correctly', () => {
+      const tabletContent = fixture.debugElement.query(
+        By.css('.desktop-tablet-content')
+      );
+      expect(tabletContent).toBeTruthy();
+    });
+
+    it('should display tariff name in tablet view correctly', () => {
+      const tariffName = fixture.debugElement
+        .query(By.css('.tariff-header'))
+        .nativeElement.textContent.trim();
+      expect(tariffName).toBe(mockTariff.tariffName);
+    });
+
+    it('should display button name in tablet view correctly', async () => {
+      // Use MatButtonHarness to find the button within the desktop content
+      const button = await loader.getHarness(
+        MatButtonHarness.with({
+          ancestor: '.desktop-tablet-content',
+        })
+      );
+      const buttonText = await button.getText();
+
+      expect(buttonText).toContain('To Tariff');
+    });
+
+    it('should not display benefits in tablet view', () => {
+      const benefitsList = fixture.debugElement.query(By.css('.benefit-item'));
+    expect(benefitsList).toBeNull();
+    });
+
+    it('should display price in tablet view correctly', () => {
+      const price = fixture.debugElement
+        .query(By.css('.price'))
+        .nativeElement.textContent.trim();
+
+      expect(price).toBe('€100.00');
+    });
+
+    it('should retrieve MatChips in desktop view', async () => {
+      // Use MatChipHarness to find the chips within the desktop content
+      const chips = await loader.getAllHarnesses(
+        MatChipHarness.with({
+          selector: '.desktop-tablet-content .speed-chip',
+        })
+      );
+
+      // Verify the number of chips
+      expect(chips.length).toBe(2);
+
+      // Verify download speed
+      expect(await chips[0].getText()).toContain('50 Mbit/s');
+      // Verify upload speed
+      expect(await chips[1].getText()).toContain('10 Mbit/s');
+    });
+
+    it('should not display Download label in tablet view', async () => {
+      // Use MatChipHarness to find the chips within the desktop content
+      const downloadLabel = fixture.debugElement.query(By.css('.download-label'));
+      expect(downloadLabel).toBeNull();
+    });
+
+    it('should not display Upload label in tablet view', async () => {
+      // Use MatChipHarness to find the chips within the desktop content
+      const downloadLabel = fixture.debugElement.query(By.css('.upload-label'));
+      expect(downloadLabel).toBeNull();
+    });
   });
 
   describe('Desktop view', () => {
     beforeEach(async () => {
-      await setupComponent();
-      // Simulate desktop screen width
-      spyOnProperty(window, 'innerWidth').and.returnValue(1024);
-      window.dispatchEvent(new Event('resize'));
+      //isDesktop = true
+      await setupComponent(false, false, true);
 
       fixture.detectChanges();
     });
@@ -187,3 +265,17 @@ describe('TariffComponent', () => {
     });
   });
 });
+
+
+// Mock ResponsiveService
+class MockResponsiveService {
+  constructor(
+    private mobile: boolean,
+    private tablet: boolean,
+    private desktop: boolean
+  ) {}
+
+  isMobile = () => this.mobile;
+  isTablet = () => this.tablet;
+  isDesktop = () => this.desktop;
+}
