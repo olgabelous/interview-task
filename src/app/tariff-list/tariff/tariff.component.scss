@@ -21,71 +21,42 @@
   }
 }
 
+.benefit-item {
+  height: 30px !important;
+
+  .benefit-icon {
+    color: green;
+  }
+}
+
+.price-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .price {
   font-size: 1rem;
   font-weight: bold;
 }
 
-.desktop-tablet-content {
-  display: none;
-}
-
 /* Tablet styles */
-@media (min-width: 768px) {
-  .desktop-content,
-  .desktop-flex-content,
-  .mobile-content {
-    display: none;
-  }
-
-  .desktop-tablet-content {
-    display: flex;
-  }
-
+@media (min-width: 600px) {
   .tariff-header {
-    font-size: 18px;
     font-weight: bold;
-  }
-
-  .price-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 }
 
 /* Desktop styles */
-@media (min-width: 1024px) {
-  .desktop-tablet-content {
-    display: flex;
-  }
-
-  .desktop-content {
-    display: block;
-  }
-
-  .mobile-content,
-  .tablet-content {
-    display: none;
-  }
-
+@media (min-width: 960px) {
   .tariff-header {
     font-size: 18px;
     font-weight: bold;
   }
 
-  .benefit-item {
-    height: 30px !important;
-
-    .benefit-icon {
-      color: green;
-    }
-  }
-
   .price-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-self: center;
   }
 
   .price {

@@ -33,14 +33,14 @@
 }
 
 /* Tablet styles */
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .sorting {
     width: 50%;
   }
 }
 
 /* Desktop styles */
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .sorting {
     width: 30%;
   }
