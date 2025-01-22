@@ -6,7 +6,7 @@ import { provideLocationMocks } from '@angular/common/testing';
 import { MOCK_TARIFFS } from '../../testing/test-mock';
 import { Tariff } from '../../models/tariff';
 
-fdescribe('TariffDetailsComponent', () => {
+describe('TariffDetailsComponent', () => {
   let component: TariffDetailsComponent;
   let fixture: ComponentFixture<TariffDetailsComponent>;
   const mockTariff: Tariff = MOCK_TARIFFS[0];

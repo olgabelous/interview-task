@@ -22,7 +22,7 @@ describe('TariffListComponent', () => {
       imports: [MatCardModule, MatSelectModule],
       providers: [
         provideHttpClient(),
-        provideHttpClientTesting(), // Enable HttpClientTesting
+        provideHttpClientTesting(),
         provideAnimations(), 
         TariffService,
       ],

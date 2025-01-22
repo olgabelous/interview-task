@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
 import { TariffService } from './tariff.service';
-import { Tariff } from '../models/tariff'; // Adjust the path to your Tariff interface
+import { Tariff } from '../models/tariff';
 import { MOCK_TARIFFS } from '../testing/test-mock';
 
 describe('TariffService', () => {
@@ -20,7 +20,7 @@ describe('TariffService', () => {
       ],
     });
     service = TestBed.inject(TariffService); 
-    httpTestingController = TestBed.inject(HttpTestingController); // Inject HttpTestingController
+    httpTestingController = TestBed.inject(HttpTestingController); 
   });
 
   afterEach(() => {
@@ -28,12 +28,10 @@ describe('TariffService', () => {
   });
 
   it('should retrieve tariffs from the API', () => {
-    // Call the service
     service.getTariffs().subscribe((tariffs) => {
-      expect(tariffs).toEqual(mockTariffs); // Returned data matches the mock data
+      expect(tariffs).toEqual(mockTariffs); 
     });
-
-    // Mock the HTTP request
+    
     const req = httpTestingController.expectOne('/mocks/mock-data.json');
     expect(req.request.method).toBe('GET');
     req.flush(mockTariffs);

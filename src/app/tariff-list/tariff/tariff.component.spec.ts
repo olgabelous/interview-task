@@ -16,6 +16,7 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatChipHarness } from '@angular/material/chips/testing';
 import { DebugElement } from '@angular/core';
 import { ResponsiveService } from '../../services/responsive.service';
+import { MockResponsiveService } from '../../testing/mock-responsive-service';
 
 describe('TariffComponent', () => {
   let component: TariffComponent;
@@ -165,14 +166,12 @@ describe('TariffComponent', () => {
     });
 
     it('should retrieve MatChips in desktop view', async () => {
-      // Use MatChipHarness to find the chips within the desktop content
       const chips = await loader.getAllHarnesses(
         MatChipHarness.with({
           selector: '.desktop-tablet-content .speed-chip',
         })
       );
 
-      // Verify the number of chips
       expect(chips.length).toBe(2);
 
       // Verify download speed
@@ -182,13 +181,11 @@ describe('TariffComponent', () => {
     });
 
     it('should not display Download label in tablet view', async () => {
-      // Use MatChipHarness to find the chips within the desktop content
       const downloadLabel = fixture.debugElement.query(By.css('.download-label'));
       expect(downloadLabel).toBeNull();
     });
 
     it('should not display Upload label in tablet view', async () => {
-      // Use MatChipHarness to find the chips within the desktop content
       const downloadLabel = fixture.debugElement.query(By.css('.upload-label'));
       expect(downloadLabel).toBeNull();
     });
@@ -217,7 +214,6 @@ describe('TariffComponent', () => {
     });
 
     it('should display button name in desktop view correctly', async () => {
-      // Use MatButtonHarness to find the button within the desktop content
       const button = await loader.getHarness(
         MatButtonHarness.with({
           ancestor: '.desktop-tablet-content',
@@ -248,14 +244,12 @@ describe('TariffComponent', () => {
     });
 
     it('should retrieve MatChips in desktop view', async () => {
-      // Use MatChipHarness to find the chips within the desktop content
       const chips = await loader.getAllHarnesses(
         MatChipHarness.with({
           selector: '.desktop-tablet-content .speed-chip',
         })
       );
 
-      // Verify the number of chips
       expect(chips.length).toBe(2);
 
       // Verify download speed
@@ -265,17 +259,3 @@ describe('TariffComponent', () => {
     });
   });
 });
-
-
-// Mock ResponsiveService
-class MockResponsiveService {
-  constructor(
-    private mobile: boolean,
-    private tablet: boolean,
-    private desktop: boolean
-  ) {}
-
-  isMobile = () => this.mobile;
-  isTablet = () => this.tablet;
-  isDesktop = () => this.desktop;
-}
